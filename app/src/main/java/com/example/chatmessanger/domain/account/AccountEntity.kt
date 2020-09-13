@@ -1,4 +1,3 @@
 package com.example.chatmessanger.domain.account
 
-class AccountEbtity {
-}
+class AccountEntity
