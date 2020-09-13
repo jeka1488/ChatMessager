@@ -1,4 +1,6 @@
 package com.example.chatmessanger.remote.core
 
-class BaseResponse {
-}
+open class BaseResponse(
+    val success: Int,
+    val message: String
+)
