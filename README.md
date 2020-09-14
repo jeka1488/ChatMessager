@@ -1,2 +1,2 @@
-# ChatMessager
-Android Application "ChatMessager"
+# ChatMessanger
+Android Application "ChatMessanger"
