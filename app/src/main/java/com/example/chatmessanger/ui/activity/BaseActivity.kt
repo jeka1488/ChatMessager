@@ -13,8 +13,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.chatmessanger.R
-import com.example.chatmessanger.domain.type.exception.Failure
-import com.example.chatmessanger.ui.App
+import com.example.chatmessanger.domain.type.Failure
 import com.example.chatmessanger.ui.fragment.BaseFragment
 import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject

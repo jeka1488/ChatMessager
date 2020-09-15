@@ -1,7 +1,7 @@
 package com.example.chatmessanger.remote.core
 
 import com.example.chatmessanger.domain.type.Either
-import com.example.chatmessanger.domain.type.exception.Failure
+import com.example.chatmessanger.domain.type.Failure
 import retrofit2.Call
 import retrofit2.Response
 import javax.inject.Inject
@@ -38,6 +38,8 @@ fun <T : BaseResponse> Response<T>.parseError(): Failure {
     val message = (body() as BaseResponse).message
     return when (message) {
         "email already exists" -> Failure.EmailAlreadyExistError
+        "error in email or password" -> Failure.AuthError
+        "Token is invalid" -> Failure.TokenError
         else -> Failure.ServerError
     }
 }

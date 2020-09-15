@@ -5,7 +5,7 @@
 
     <string name="error_network">Нет сетевого подключения.</string>
     <string name="error_server">Ошибка сервера.</string>
-    <string name="error_email_already_exist">Адрес электронной почты уже существует.</string>
+    <string name="error_email_already_exist">Адрес электронной почты уже существует. Укажите другой адрес</string>
     <string name="error_password_mismatch">Пароли не совпадают</string>
 
     <string name="email">Email</string>

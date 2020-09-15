@@ -1,10 +1,10 @@
-package com.example.chatmessanger.ui.ext
+package com.example.chatmessanger.ui.core.ext
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import com.example.chatmessanger.domain.type.Failure
 import com.example.chatmessanger.domain.type.HandleOnce
-import com.example.chatmessanger.domain.type.exception.Failure
 
 fun <T : Any, L : LiveData<T>> LifecycleOwner.onSuccess(liveData: L, body: (T?) -> Unit) =
     liveData.observe(this, Observer(body))

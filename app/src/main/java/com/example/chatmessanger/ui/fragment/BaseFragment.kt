@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.chatmessanger.R
-import com.example.chatmessanger.domain.type.exception.Failure
+import com.example.chatmessanger.domain.type.Failure
 import com.example.chatmessanger.ui.activity.BaseActivity
 import com.example.chatmessanger.ui.activity.base
 import javax.inject.Inject

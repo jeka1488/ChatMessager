@@ -6,8 +6,8 @@ import com.example.chatmessanger.R
 import com.example.chatmessanger.domain.type.None
 import com.example.chatmessanger.presentation.viewmodel.AccountViewModel
 import com.example.chatmessanger.ui.App
-import com.example.chatmessanger.ui.ext.onFailure
-import com.example.chatmessanger.ui.ext.onSuccess
+import com.example.chatmessanger.ui.core.ext.onFailure
+import com.example.chatmessanger.ui.core.ext.onSuccess
 import kotlinx.android.synthetic.main.fragment_register.*
 
 class RegisterFragment : BaseFragment() {

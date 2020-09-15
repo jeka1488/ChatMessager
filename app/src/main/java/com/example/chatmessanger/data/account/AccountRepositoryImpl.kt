@@ -2,10 +2,7 @@ package com.example.chatmessanger.data.account
 
 import com.example.chatmessanger.domain.account.AccountEntity
 import com.example.chatmessanger.domain.account.AccountRepository
-import com.example.chatmessanger.domain.type.Either
-import com.example.chatmessanger.domain.type.None
-import com.example.chatmessanger.domain.type.exception.Failure
-import com.example.chatmessanger.domain.type.flatMap
+import com.example.chatmessanger.domain.type.*
 import java.util.*
 
 
@@ -15,11 +12,15 @@ class AccountRepositoryImpl(
 ) : AccountRepository {
 
     override fun login(email: String, password: String): Either<Failure, AccountEntity> {
-        throw UnsupportedOperationException("Login is not supported")
+        return accountCache.getToken().flatMap {
+            accountRemote.login(email, password, it)
+        }.onNext {
+            accountCache.saveAccount(it)
+        }
     }
 
     override fun logout(): Either<Failure, None> {
-        throw UnsupportedOperationException("Logout is not supported")
+        return accountCache.logout()
     }
 
     override fun register(email: String, name: String, password: String): Either<Failure, None> {
@@ -34,12 +35,15 @@ class AccountRepositoryImpl(
 
 
     override fun getCurrentAccount(): Either<Failure, AccountEntity> {
-        throw UnsupportedOperationException("Get account is not supported")
+        return accountCache.getCurrentAccount()
     }
 
 
     override fun updateAccountToken(token: String): Either<Failure, None> {
-        return accountCache.saveToken(token)
+        accountCache.saveToken(token)
+
+        return accountCache.getCurrentAccount()
+            .flatMap { accountRemote.updateToken(it.id, token, it.token) }
     }
 
     override fun updateAccountLastSeen(): Either<Failure, None> {

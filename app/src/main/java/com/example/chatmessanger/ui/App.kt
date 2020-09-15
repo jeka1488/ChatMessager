@@ -6,6 +6,7 @@ import com.example.chatmessanger.presentation.injection.CacheModule
 import com.example.chatmessanger.presentation.injection.RemoteModule
 import com.example.chatmessanger.presentation.injection.ViewModelModule
 import com.example.chatmessanger.ui.activity.RegisterActivity
+import com.example.chatmessanger.ui.core.navigation.RouteActivity
 import com.example.chatmessanger.ui.fragment.RegisterFragment
 import com.example.chatmessanger.ui.service.FirebaseService
 import dagger.Component
@@ -33,9 +34,13 @@ interface AppComponent {
 
     //activities
     fun inject(activity: RegisterActivity)
+    fun inject(activity: RouteActivity)
+    //fun inject(activity: HomeActivity)
 
     //fragments
     fun inject(fragment: RegisterFragment)
+    //fun inject(fragment: LoginFragment)
+    //fun inject(fragment: ChatsFragment)
 
     //services
     fun inject(service: FirebaseService)
