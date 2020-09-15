@@ -10,6 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+
 object ServiceFactory {
     const val BASE_URL = "https://c72229.hostru10.fornex.host/chat.praisethesun.ru/rest_api/"
 
@@ -31,6 +32,7 @@ object ServiceFactory {
 
     private fun makeOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
+            .hostnameVerifier{ _, _ -> true }
             .addInterceptor(httpLoggingInterceptor)
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
@@ -47,3 +49,5 @@ object ServiceFactory {
         return logging
     }
 }
+
+
