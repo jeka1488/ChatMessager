@@ -13,7 +13,6 @@ import com.example.chatmessanger.ui.core.ext.onFailure
 import com.example.chatmessanger.ui.core.ext.onSuccess
 import kotlinx.android.synthetic.main.activity_navigation.*
 import kotlinx.android.synthetic.main.navigation.*
-import kotlinx.android.synthetic.main.toolbar.*
 
 class HomeActivity : BaseActivity() {
 

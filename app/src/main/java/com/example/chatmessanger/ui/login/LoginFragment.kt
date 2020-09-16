@@ -10,10 +10,12 @@ import com.example.chatmessanger.ui.core.BaseFragment
 import com.example.chatmessanger.ui.core.ext.onFailure
 import com.example.chatmessanger.ui.core.ext.onSuccess
 import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_register.etEmail
+import kotlinx.android.synthetic.main.fragment_register.etPassword
 
 class LoginFragment : BaseFragment() {
 
-    override val layoutId: Int = com.example.chatmessanger.R.layout.fragment_login
+    override val layoutId: Int = R.layout.fragment_login
     override val titleToolbar = R.string.screen_login
 
     private lateinit var accountViewModel: AccountViewModel

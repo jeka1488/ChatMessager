@@ -8,6 +8,7 @@ import javax.inject.Inject
 
 class Logout @Inject constructor(
     private val accountRepository: AccountRepository
-): UseCase<None, None>() {
+) : UseCase<None, None>() {
+
     override suspend fun run(params: None): Either<Failure, None> = accountRepository.logout()
 }

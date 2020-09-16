@@ -14,6 +14,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!--<meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAEp8BOdaEH5Do2QNzBsGe50FECxvYYStk"/>-->
+
         <!--ACTIVITIES-->
         <!--Route-->
         <activity android:name=".ui.core.navigation.RouteActivity"

@@ -14,7 +14,7 @@ import kotlin.coroutines.CoroutineContext
  * (kotlin coroutine) and will post the result in the UI thread.
  */
 
-abstract  class UseCase<out Type, in Params> {
+abstract class UseCase<out Type, in Params> {
     var backgroundContext: CoroutineContext = Dispatchers.IO
     var foregroundContext: CoroutineContext = Dispatchers.Main
 

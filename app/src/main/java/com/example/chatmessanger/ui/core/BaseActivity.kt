@@ -32,7 +32,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_layout)
+        setContentView(contentId)
 
         setSupportActionBar(toolbar)
         addFragment(savedInstanceState)
@@ -77,7 +77,7 @@ abstract class BaseActivity : AppCompatActivity() {
             is Failure.AuthError -> showMessage(getString(R.string.error_auth))
             is Failure.TokenError -> navigator.showLogin(this)
         }
-        }
+    }
 
     fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

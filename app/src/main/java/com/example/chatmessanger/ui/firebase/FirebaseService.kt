@@ -17,12 +17,14 @@ class FirebaseService : FirebaseMessagingService() {
         App.appComponent.inject(this)
     }
 
-    override fun onMessageReceived(p0: RemoteMessage) {
+    override fun onMessageReceived(remoteMessage: RemoteMessage?) {
 
     }
 
-
-    override fun onNewToken(token: String) {
+    override fun onNewToken(token: String?) {
         Log.e("fb token", ": $token")
+        if (token != null) {
+            updateToken(UpdateToken.Params(token))
+        }
     }
 }

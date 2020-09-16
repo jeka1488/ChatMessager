@@ -15,17 +15,19 @@ import com.example.chatmessanger.ui.register.RegisterFragment
 import dagger.Component
 import javax.inject.Singleton
 
-class App: Application() {
-    companion object{
+class App : Application() {
+
+    companion object {
         lateinit var appComponent: AppComponent
     }
 
     override fun onCreate() {
         super.onCreate()
+
         initAppComponent()
     }
 
-    fun initAppComponent(){
+    private fun initAppComponent() {
         appComponent = DaggerAppComponent.builder()
             .appModule(AppModule(this)).build()
     }
@@ -37,6 +39,7 @@ interface AppComponent {
 
     //activities
     fun inject(activity: RegisterActivity)
+
     fun inject(activity: RouteActivity)
     fun inject(activity: HomeActivity)
 
@@ -47,5 +50,4 @@ interface AppComponent {
 
     //services
     fun inject(service: FirebaseService)
-
 }
