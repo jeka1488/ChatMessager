@@ -1,4 +1,4 @@
-package com.example.chatmessanger.ui.activity
+package com.example.chatmessanger.ui.core
 
 import android.app.Activity
 import android.content.Context
@@ -14,7 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.example.chatmessanger.R
 import com.example.chatmessanger.domain.type.Failure
-import com.example.chatmessanger.ui.fragment.BaseFragment
+import com.example.chatmessanger.ui.core.navigation.Navigator
 import kotlinx.android.synthetic.main.toolbar.*
 import javax.inject.Inject
 
@@ -24,6 +24,11 @@ abstract class BaseActivity : AppCompatActivity() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    @Inject
+    lateinit var navigator: Navigator
+
+    open val contentId = R.layout.activity_layout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,8 +74,10 @@ abstract class BaseActivity : AppCompatActivity() {
             is Failure.NetworkConnectionError -> showMessage(getString(R.string.error_network))
             is Failure.ServerError -> showMessage(getString(R.string.error_server))
             is Failure.EmailAlreadyExistError -> showMessage(getString(R.string.error_email_already_exist))
+            is Failure.AuthError -> showMessage(getString(R.string.error_auth))
+            is Failure.TokenError -> navigator.showLogin(this)
         }
-    }
+        }
 
     fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

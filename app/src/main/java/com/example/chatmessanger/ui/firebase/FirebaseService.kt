@@ -1,4 +1,4 @@
-package com.example.chatmessanger.ui.service
+package com.example.chatmessanger.ui.firebase
 
 import android.util.Log
 import com.example.chatmessanger.domain.account.UpdateToken

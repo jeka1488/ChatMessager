@@ -5,10 +5,13 @@ import com.example.chatmessanger.presentation.injection.AppModule
 import com.example.chatmessanger.presentation.injection.CacheModule
 import com.example.chatmessanger.presentation.injection.RemoteModule
 import com.example.chatmessanger.presentation.injection.ViewModelModule
-import com.example.chatmessanger.ui.activity.RegisterActivity
 import com.example.chatmessanger.ui.core.navigation.RouteActivity
-import com.example.chatmessanger.ui.fragment.RegisterFragment
-import com.example.chatmessanger.ui.service.FirebaseService
+import com.example.chatmessanger.ui.firebase.FirebaseService
+import com.example.chatmessanger.ui.home.ChatsFragment
+import com.example.chatmessanger.ui.home.HomeActivity
+import com.example.chatmessanger.ui.login.LoginFragment
+import com.example.chatmessanger.ui.register.RegisterActivity
+import com.example.chatmessanger.ui.register.RegisterFragment
 import dagger.Component
 import javax.inject.Singleton
 
@@ -35,12 +38,12 @@ interface AppComponent {
     //activities
     fun inject(activity: RegisterActivity)
     fun inject(activity: RouteActivity)
-    //fun inject(activity: HomeActivity)
+    fun inject(activity: HomeActivity)
 
     //fragments
     fun inject(fragment: RegisterFragment)
-    //fun inject(fragment: LoginFragment)
-    //fun inject(fragment: ChatsFragment)
+    fun inject(fragment: LoginFragment)
+    fun inject(fragment: ChatsFragment)
 
     //services
     fun inject(service: FirebaseService)

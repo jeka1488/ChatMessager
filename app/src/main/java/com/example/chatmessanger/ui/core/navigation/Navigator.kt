@@ -4,7 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.example.chatmessanger.presentation.Authenticator
-import com.example.chatmessanger.ui.activity.RegisterActivity
+import com.example.chatmessanger.ui.home.HomeActivity
+import com.example.chatmessanger.ui.login.LoginActivity
+import com.example.chatmessanger.ui.register.RegisterActivity
 import javax.inject.Inject
 import javax.inject.Singleton
 

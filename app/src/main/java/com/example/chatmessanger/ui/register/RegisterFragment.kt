@@ -1,11 +1,13 @@
-package com.example.chatmessanger.ui.fragment
+package com.example.chatmessanger.ui.register
 
 import android.os.Bundle
 import android.view.View
 import com.example.chatmessanger.R
+import com.example.chatmessanger.domain.account.AccountEntity
 import com.example.chatmessanger.domain.type.None
 import com.example.chatmessanger.presentation.viewmodel.AccountViewModel
 import com.example.chatmessanger.ui.App
+import com.example.chatmessanger.ui.core.BaseFragment
 import com.example.chatmessanger.ui.core.ext.onFailure
 import com.example.chatmessanger.ui.core.ext.onSuccess
 import kotlinx.android.synthetic.main.fragment_register.*
@@ -22,6 +24,7 @@ class RegisterFragment : BaseFragment() {
 
         accountViewModel = viewModel {
             onSuccess(registerData, ::handleRegister)
+            onSuccess(accountData, ::handleLogin)
             onFailure(failureData, ::handleFailure)
         }
     }
@@ -31,6 +34,10 @@ class RegisterFragment : BaseFragment() {
 
         btnNewMembership.setOnClickListener {
             register()
+        }
+
+        btnAlreadyHaveAccount.setOnClickListener {
+            activity?.finish()
         }
     }
 
@@ -67,8 +74,15 @@ class RegisterFragment : BaseFragment() {
         }
     }
 
-    private fun handleRegister(none: None? = None()) {
+    private fun handleLogin(accountEntity: AccountEntity?) {
         hideProgress()
-        showMessage("Аккаунт создан")
+        activity?.let {
+            navigator.showHome(it)
+            it.finish()
+        }
+    }
+
+    private fun handleRegister(none: None? = None()) {
+        accountViewModel.login(etEmail.text.toString(), etPassword.text.toString())
     }
 }
