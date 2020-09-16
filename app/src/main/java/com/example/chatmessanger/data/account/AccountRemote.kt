@@ -10,7 +10,6 @@ interface AccountRemote {
         email: String,
         name: String,
         password: String,
-        token: String,
         userDate: Long
     ): Either<Failure, None>
 
