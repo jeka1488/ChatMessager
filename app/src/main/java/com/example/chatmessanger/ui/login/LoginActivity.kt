@@ -1,8 +1,9 @@
 package com.example.chatmessanger.ui.login
 
 import com.example.chatmessanger.ui.core.BaseActivity
+import com.example.chatmessanger.ui.core.BaseFragment
 
 class LoginActivity : BaseActivity() {
 
-    override val fragment = LoginFragment()
+    override var fragment: BaseFragment = LoginFragment()
 }

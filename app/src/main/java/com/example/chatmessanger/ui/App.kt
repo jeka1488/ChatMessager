@@ -7,6 +7,8 @@ import com.example.chatmessanger.presentation.injection.RemoteModule
 import com.example.chatmessanger.presentation.injection.ViewModelModule
 import com.example.chatmessanger.ui.core.navigation.RouteActivity
 import com.example.chatmessanger.ui.firebase.FirebaseService
+import com.example.chatmessanger.ui.friends.FriendRequestsFragment
+import com.example.chatmessanger.ui.friends.FriendsFragment
 import com.example.chatmessanger.ui.home.ChatsFragment
 import com.example.chatmessanger.ui.home.HomeActivity
 import com.example.chatmessanger.ui.login.LoginFragment
@@ -47,6 +49,8 @@ interface AppComponent {
     fun inject(fragment: RegisterFragment)
     fun inject(fragment: LoginFragment)
     fun inject(fragment: ChatsFragment)
+    fun inject(fragment: FriendsFragment)
+    fun inject(fragment: FriendRequestsFragment)
 
     //services
     fun inject(service: FirebaseService)
