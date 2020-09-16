@@ -1,10 +1,9 @@
 package com.example.chatmessanger.domain.account
 
-import android.text.PrecomputedText
 import com.example.chatmessanger.domain.interactor.UseCase
 import com.example.chatmessanger.domain.type.None
 import com.example.chatmessanger.domain.type.Either
-import com.example.chatmessanger.domain.type.exception.Failure
+import com.example.chatmessanger.domain.type.Failure
 import javax.inject.Inject
 
 class Register @Inject constructor(
