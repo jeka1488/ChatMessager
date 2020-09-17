@@ -5,9 +5,9 @@ import android.view.View
 import com.example.chatmessanger.R
 import com.example.chatmessanger.domain.friends.FriendEntity
 import com.example.chatmessanger.ui.core.BaseAdapter
+import com.example.chatmessanger.ui.core.GlideHelper
 import kotlinx.android.synthetic.main.item_friend.view.tvName
 import kotlinx.android.synthetic.main.item_friend_request.view.*
-
 
 open class FriendRequestsAdapter : BaseAdapter<FriendRequestsAdapter.FriendRequestViewHolder>() {
     override val layoutRes = R.layout.item_friend_request
@@ -31,6 +31,7 @@ open class FriendRequestsAdapter : BaseAdapter<FriendRequestsAdapter.FriendReque
 
 
             (item as? FriendEntity)?.let {
+                GlideHelper.loadImage(view.context, it.image, view.imgPhoto, R.drawable.ic_account_circle)
                 view.tvName.text = it.name
             }
 

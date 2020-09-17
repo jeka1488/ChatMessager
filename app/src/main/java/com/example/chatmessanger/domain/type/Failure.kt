@@ -19,4 +19,6 @@ sealed class Failure {
     object ContactNotFoundError : Failure()
 
     object NoSavedAccountsError: Failure()
+
+    object FilePickError : Failure()
 }

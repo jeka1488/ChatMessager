@@ -12,7 +12,8 @@ import java.util.concurrent.TimeUnit
 
 
 object ServiceFactory {
-    const val BASE_URL = "https://c72229.hostru10.fornex.host/chat.praisethesun.ru/rest_api/"
+    const val SERVER_URL = "https://c72229.hostru10.fornex.host/chat.praisethesun.ru"
+    const val BASE_URL = "$SERVER_URL/rest_api/"
 
     fun makeService(isDebug: Boolean): ApiService {
         val okHttpClient = makeOkHttpClient(

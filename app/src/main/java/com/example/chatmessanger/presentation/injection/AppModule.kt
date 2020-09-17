@@ -6,8 +6,10 @@ import com.example.chatmessanger.data.account.AccountRemote
 import com.example.chatmessanger.data.account.AccountRepositoryImpl
 import com.example.chatmessanger.data.friends.FriendsRemote
 import com.example.chatmessanger.data.friends.FriendsRepositoryImpl
+import com.example.chatmessanger.data.media.MediaRepositoryImpl
 import com.example.chatmessanger.domain.account.AccountRepository
 import com.example.chatmessanger.domain.friends.FriendsRepository
+import com.example.chatmessanger.domain.media.MediaRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -29,5 +31,11 @@ class AppModule(private val context: Context) {
     @Singleton
     fun provideFriendsRepository(remote: FriendsRemote, accountCache: AccountCache): FriendsRepository {
         return FriendsRepositoryImpl(accountCache, remote)
+    }
+
+    @Provides
+    @Singleton
+    fun provideMediaRepository(context: Context): MediaRepository {
+        return MediaRepositoryImpl(context)
     }
 }
