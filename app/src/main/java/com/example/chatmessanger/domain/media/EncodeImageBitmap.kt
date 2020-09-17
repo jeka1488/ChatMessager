@@ -4,7 +4,7 @@ import android.graphics.Bitmap
 import com.example.chatmessanger.domain.interactor.UseCase
 import javax.inject.Inject
 
-class EncodeImageBitmap @Inject constructor(
+class ЛEncodeImageBitmap @Inject constructor(
     private val mediaRepository: MediaRepository
 ) : UseCase<String, Bitmap?>() {
 
