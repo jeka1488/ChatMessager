@@ -25,7 +25,7 @@ class AccountRepositoryImpl(
 
     override fun register(email: String, name: String, password: String): Either<Failure, None> {
         return accountCache.getToken().flatMap {
-            accountRemote.register(email, name, password, it, Calendar.getInstance().timeInMillis)
+            accountRemote.register(email, name, password, Calendar.getInstance().timeInMillis)
         }
     }
 
